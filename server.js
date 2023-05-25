@@ -18,15 +18,11 @@ connectDB();
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-// // support parsing of application/json type post data
-// app.use(bodyParser.json());
 
-// //support parsing of application/x-www-form-urlencoded post data
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(cors({
     origin:process.env.ORIGIN,
-    credentials:true
+    credentials:true,
 }))
 
 app.use('/v1/api/users' , userRouter);
